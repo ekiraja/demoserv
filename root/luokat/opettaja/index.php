@@ -20,13 +20,13 @@
                       <tbody>
                       </tbody>
                       <tfoot>
-                      <tr>
-                        <th>Nimi</th>
-                        <th>Email</th>
-                        <th>Puhelin</th>
-                        <th>Opetus tehtävä</th>
-                        <th>Toiminto</th>
-                      </tr>
+                          <tr>
+                            <th>Nimi</th>
+                            <th>Email</th>
+                            <th>Puhelin</th>
+                            <th>Opetus tehtävä</th>
+                            <th>Toiminto</th>
+                          </tr>
                       </tfoot>
                     </table>
                   </div>

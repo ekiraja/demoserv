@@ -1653,3 +1653,157 @@ Version: '5.6.34'  socket: ''  port: 3306  MySQL Community Server (GPL)
 2020-01-17 11:51:18 23972 [Note] Event Scheduler: Loaded 0 events
 2020-01-17 11:51:18 23972 [Note] E:\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
 Version: '5.6.34'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2020-01-17 18:21:01 10252 [Note] Plugin 'FEDERATED' is disabled.
+2020-01-17 18:21:02 10252 [Note] InnoDB: Using atomics to ref count buffer pool pages
+2020-01-17 18:21:02 10252 [Note] InnoDB: The InnoDB memory heap is disabled
+2020-01-17 18:21:02 10252 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2020-01-17 18:21:02 10252 [Note] InnoDB: Memory barrier is not used
+2020-01-17 18:21:02 10252 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2020-01-17 18:21:02 10252 [Note] InnoDB: Not using CPU crc32 instructions
+2020-01-17 18:21:02 10252 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2020-01-17 18:21:02 10252 [Note] InnoDB: Completed initialization of buffer pool
+2020-01-17 18:21:02 10252 [Note] InnoDB: Highest supported file format is Barracuda.
+2020-01-17 18:21:02 10252 [Note] InnoDB: The log sequence numbers 2598224 and 2598224 in ibdata files do not match the log sequence number 3944266 in the ib_logfiles!
+2020-01-17 18:21:02 10252 [Note] InnoDB: Database was not shutdown normally!
+2020-01-17 18:21:02 10252 [Note] InnoDB: Starting crash recovery.
+2020-01-17 18:21:02 10252 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2020-01-17 18:21:02 10252 [Note] InnoDB: Restoring possible half-written data pages 
+2020-01-17 18:21:02 10252 [Note] InnoDB: from the doublewrite buffer...
+2020-01-17 18:21:05 10252 [Note] InnoDB: 128 rollback segment(s) are active.
+2020-01-17 18:21:05 10252 [Note] InnoDB: Waiting for purge to start
+2020-01-17 18:21:05 10252 [Note] InnoDB: 5.6.34 started; log sequence number 3944266
+2020-01-17 18:21:05 10252 [Note] Server hostname (bind-address): '*'; port: 3306
+2020-01-17 18:21:05 10252 [Note] IPv6 is available.
+2020-01-17 18:21:05 10252 [Note]   - '::' resolves to '::';
+2020-01-17 18:21:05 10252 [Note] Server socket created on IP: '::'.
+2020-01-17 18:21:07 10252 [Note] Event Scheduler: Loaded 0 events
+2020-01-17 18:21:07 10252 [Note] K:\demoserv/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.34'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2020-01-17 21:07:48 9576 [Note] Plugin 'FEDERATED' is disabled.
+2020-01-17 21:07:48 9576 [Note] InnoDB: Using atomics to ref count buffer pool pages
+2020-01-17 21:07:48 9576 [Note] InnoDB: The InnoDB memory heap is disabled
+2020-01-17 21:07:48 9576 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2020-01-17 21:07:48 9576 [Note] InnoDB: Memory barrier is not used
+2020-01-17 21:07:48 9576 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2020-01-17 21:07:48 9576 [Note] InnoDB: Not using CPU crc32 instructions
+2020-01-17 21:07:48 9576 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2020-01-17 21:07:48 9576 [Note] InnoDB: Completed initialization of buffer pool
+2020-01-17 21:07:48 9576 [Note] InnoDB: Highest supported file format is Barracuda.
+2020-01-17 21:07:48 9576 [Note] InnoDB: The log sequence numbers 2598224 and 2598224 in ibdata files do not match the log sequence number 3944276 in the ib_logfiles!
+2020-01-17 21:07:48 9576 [Note] InnoDB: Database was not shutdown normally!
+2020-01-17 21:07:48 9576 [Note] InnoDB: Starting crash recovery.
+2020-01-17 21:07:48 9576 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2020-01-17 21:07:49 9576 [Note] InnoDB: Restoring possible half-written data pages 
+2020-01-17 21:07:49 9576 [Note] InnoDB: from the doublewrite buffer...
+2020-01-17 21:07:49 9576 [Note] InnoDB: 128 rollback segment(s) are active.
+2020-01-17 21:07:49 9576 [Note] InnoDB: Waiting for purge to start
+2020-01-17 21:07:49 9576 [Note] InnoDB: 5.6.34 started; log sequence number 3944276
+2020-01-17 21:07:49 9576 [Note] Server hostname (bind-address): '*'; port: 3306
+2020-01-17 21:07:49 9576 [Note] IPv6 is available.
+2020-01-17 21:07:49 9576 [Note]   - '::' resolves to '::';
+2020-01-17 21:07:49 9576 [Note] Server socket created on IP: '::'.
+2020-01-17 21:07:50 9576 [Note] Event Scheduler: Loaded 0 events
+2020-01-17 21:07:50 9576 [Note] F:\demoserv/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.34'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2020-01-18 10:16:00 18164 [Note] Plugin 'FEDERATED' is disabled.
+2020-01-18 10:16:00 18164 [Note] InnoDB: Using atomics to ref count buffer pool pages
+2020-01-18 10:16:00 18164 [Note] InnoDB: The InnoDB memory heap is disabled
+2020-01-18 10:16:00 18164 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2020-01-18 10:16:00 18164 [Note] InnoDB: Memory barrier is not used
+2020-01-18 10:16:00 18164 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2020-01-18 10:16:00 18164 [Note] InnoDB: Not using CPU crc32 instructions
+2020-01-18 10:16:00 18164 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2020-01-18 10:16:00 18164 [Note] InnoDB: Completed initialization of buffer pool
+2020-01-18 10:16:00 18164 [Note] InnoDB: Highest supported file format is Barracuda.
+2020-01-18 10:16:00 18164 [Note] InnoDB: The log sequence numbers 2598224 and 2598224 in ibdata files do not match the log sequence number 3944286 in the ib_logfiles!
+2020-01-18 10:16:00 18164 [Note] InnoDB: Database was not shutdown normally!
+2020-01-18 10:16:00 18164 [Note] InnoDB: Starting crash recovery.
+2020-01-18 10:16:00 18164 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2020-01-18 10:16:00 18164 [Note] InnoDB: Restoring possible half-written data pages 
+2020-01-18 10:16:00 18164 [Note] InnoDB: from the doublewrite buffer...
+2020-01-18 10:16:01 18164 [Note] InnoDB: 128 rollback segment(s) are active.
+2020-01-18 10:16:01 18164 [Note] InnoDB: Waiting for purge to start
+2020-01-18 10:16:01 18164 [Note] InnoDB: 5.6.34 started; log sequence number 3944286
+2020-01-18 10:16:01 18164 [Note] Server hostname (bind-address): '*'; port: 3306
+2020-01-18 10:16:01 18164 [Note] IPv6 is available.
+2020-01-18 10:16:01 18164 [Note]   - '::' resolves to '::';
+2020-01-18 10:16:01 18164 [Note] Server socket created on IP: '::'.
+2020-01-18 10:16:01 18164 [Note] Event Scheduler: Loaded 0 events
+2020-01-18 10:16:01 18164 [Note] E:\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.34'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2020-01-18 10:38:47 44bc  InnoDB: Error: table `luokat.db`.`admins` does not exist in the InnoDB internal
+InnoDB: data dictionary though MySQL is trying to drop it.
+InnoDB: Have you copied the .frm file of the table to the
+InnoDB: MySQL database directory from another database?
+InnoDB: You can look for further help from
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html
+2020-01-18 10:38:47 44bc  InnoDB: Error: table `luokat.db`.`kouluttajat` does not exist in the InnoDB internal
+InnoDB: data dictionary though MySQL is trying to drop it.
+InnoDB: Have you copied the .frm file of the table to the
+InnoDB: MySQL database directory from another database?
+InnoDB: You can look for further help from
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html
+2020-01-18 10:38:47 44bc  InnoDB: Error: table `luokat.db`.`kurssit` does not exist in the InnoDB internal
+InnoDB: data dictionary though MySQL is trying to drop it.
+InnoDB: Have you copied the .frm file of the table to the
+InnoDB: MySQL database directory from another database?
+InnoDB: You can look for further help from
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html
+2020-01-18 10:38:47 44bc  InnoDB: Error: table `luokat.db`.`tilat` does not exist in the InnoDB internal
+InnoDB: data dictionary though MySQL is trying to drop it.
+InnoDB: Have you copied the .frm file of the table to the
+InnoDB: MySQL database directory from another database?
+InnoDB: You can look for further help from
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html
+2020-01-18 10:38:47 44bc  InnoDB: Error: table `luokat.db`.`varaus` does not exist in the InnoDB internal
+InnoDB: data dictionary though MySQL is trying to drop it.
+InnoDB: Have you copied the .frm file of the table to the
+InnoDB: MySQL database directory from another database?
+InnoDB: You can look for further help from
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html
+2020-01-18 10:42:43 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:43:54 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:44:27 18164 [ERROR] Invalid (old?) table or database name 'luokat..db'
+2020-01-18 10:44:32 18164 [ERROR] Invalid (old?) table or database name 'luokat..db'
+2020-01-18 10:44:47 18164 [ERROR] Invalid (old?) table or database name 'luokat..db'
+2020-01-18 10:50:01 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:24 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:40 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:41 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:41 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:41 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:41 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:41 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:41 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:49 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:53 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:53 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:56 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:50:56 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:00 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:04 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:05 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:08 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:08 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:16 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:16 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:17 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:17 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:17 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:17 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:17 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:26 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:26 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:26 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:26 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:36 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:36 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:41 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:41 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:51 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:51 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:51 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:52 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:52 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:52 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
+2020-01-18 10:51:52 18164 [ERROR] Invalid (old?) table or database name 'luokat.db'
