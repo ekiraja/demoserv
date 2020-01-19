@@ -3,17 +3,16 @@
                 <div class="col-xs-12">
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Kouluttaja lista</h3>
+                    <h3 class="box-title">Kurssi lista</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
-                    <table id="opettajat" class="table table-bordered table-hover">
+                    <table id="kurssit" class="table table-bordered table-hover">
                       <thead>
                       <tr>
                         <th>Nimi</th>
-                        <th>Email</th>
-                        <th>Puhelin</th>
-                        <th>Opetus tehtävä</th>
+                        <th>Koulutus ala</th>
+                        <th>Luotu</th>
                         <th>Toiminto</th>
                       </tr>
                       </thead>
@@ -22,9 +21,8 @@
                       <tfoot>
                       <tr>
                         <th>Nimi</th>
-                        <th>Email</th>
-                        <th>Puhelin</th>
-                        <th>Opetus tehtävä</th>
+                        <th>Koulutus ala</th>
+                        <th>Luotu</th>
                         <th>Toiminto</th>
                       </tr>
                       </tfoot>
@@ -42,30 +40,29 @@
   $(document).ready(function(){
     $.ajax({
         type: "GET",
-        url: "../api/opettaja/lue.php",
+        url: "../api/kurssit/lue.php",
         dataType: 'json',
         success: function(data) {
             var response="";
             for(var user in data){
                 response += "<tr>"+
                 "<td>"+data[user].nimi+"</td>"+
-                "<td>"+data[user].email+"</td>"+
-                "<td>"+data[user].puhelin+"</td>"+
-                "<td>"+data[user].oppi_aine+"</td>"+
-                "<td><a href='../opettaja/paivita.php?id="+data[user].id+"'>Muokkaa</a> | <a href='#' onClick=Remove('"+data[user].id+"')>Poista</a></td>"+
+                "<td>"+data[user].koulutus_ala+"</td>"+
+                "<td>"+data[user].luotu+"</td>"+
+                "<td><a href='../kurssit/paivita.php?id="+data[user].id+"'>Muokkaa</a> | <a href='#' onClick=Remove('"+data[user].id+"')>Poista</a></td>"+
                 "</tr>";
             }
-            $(response).appendTo($("#opettajat"));
+            $(response).appendTo($("#kurssit"));
         }
     });
   });
   function Remove(id){
-    var result = confirm("Oletko varma että haluat poistaa tämän kouluttajan?"); 
+    var result = confirm("Oletko varma että haluat poistaa tämän kurssin?"); 
     if (result == true) { 
         $.ajax(
         {
             type: "POST",
-            url: '../api/opettaja/poista.php',
+            url: '../api/kurssit/poista.php',
             dataType: 'json',
             data: {
                 id: id
@@ -76,7 +73,7 @@
             success: function (result) {
                 if (result['status'] == true) {
                     alert("Poistettu onnistuneesti!");
-                    window.location.href = '/luokat/opettaja';
+                    window.location.href = '/luokat/kurssit';
                 }
                 else {
                     alert(result['message']);

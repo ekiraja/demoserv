@@ -1,68 +1,66 @@
 <?php
   $content = '<div class="row">
-                <!-- left column -->
-                <div class="col-md-12">
-                  <!-- general form elements -->
-                  <div class="box box-primary">
-                    <div class="box-header with-border">
-                      <h3 class="box-title">Muokkaa opettaja</h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <!-- form start -->
-                    <form role="form">
-                      <div class="box-body">
-                        <div class="form-group">
-                          <label for="exampleInputName1">Nimi</label>
-                          <input type="text" class="form-control" id="nimi" placeholder="Anna Nimi">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Email osoite</label>
-                          <input type="email" class="form-control" id="email" placeholder="Anna email">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Salasana</label>
-                          <input type="password" class="form-control" id="password" placeholder="Salasana">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputName1">Puhelin</label>
-                          <input type="text" class="form-control" id="puhelin" placeholder="Anna Puh.no.">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputName1">Opetustehtävä</label>
-                          <input type="text" class="form-control" id="oppi_aine" placeholder="Anna tehtävä">
-                        </div>
-                      </div>
-                      <!-- /.box-body -->
+                 <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                              <h3 class="box-title">Varaus lista</h3>
+                            </div>
+                          <!-- /.box-header -->
+                          <div class="box-body">
+                            <table id="varaus" class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Opetus aihe</th>
+                                <th>Kouluttaja</th>
+                                <th>Kurssi</th>
+                                <th>Tila</th>
+                                <th>Varaus aika</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                              <tfoot>
+                              <tr>
+                                <th>Opetus aihe</th>
+                                <th>Kouluttaja</th>
+                                <th>Kurssi</th>
+                                <th>Tila</th>
+                                <th>Varaus aika</th>
+                              </tr>
+                              </tfoot>
+                            </table>
+                          </div>
+                  <!-- /.box-body -->
                       <div class="box-footer">
-                        <input type="button" class="btn btn-primary" onClick="UpdateOpettaja()" value="Tallenna"></input>
+                        <input type="button" class="btn btn-primary" onClick="UpdateVaraus()" value="Tallenna"></input>
                       </div>
                     </form>
                   </div>
                   <!-- /.box -->
-                </div>
               </div>';
               
   include('../master.php');
 ?>
+
 <script>
     $(document).ready(function(){
         $.ajax({
             type: "GET",
-            url: "../api/opettaja/lueyksi.php?id=<?php echo $_GET['id']; ?>",
+            url: "../api/varaukset/lueyksi.php?id=<?php echo $_GET['id']; ?>",
             dataType: 'json',
             success: function(data) {
-                $('#nimi').val(data['nimi']);
-                $('#email').val(data['email']);
-                $('#password').val(data['password']);
-                $('#puhelin').val(data['puhelin']);
-                $('#oppi_aine').val(data['oppi_aine']);
+                $('#aihe').val(data['aihe']);
+                $('#kouluttaja').val(data['kouluttaja']);
+                $('#kurssi').val(data['kurssi']);
+                $('#tila').val(data['tila']);
+                $('#varaus').val(data['varaus']);
             },
             error: function (result) {
                 console.log(result);
             },
         });
     });
-    function UpdateOpettaja(){
+    function UpdateVaraus(){
         $.ajax(
         {
             type: "POST",

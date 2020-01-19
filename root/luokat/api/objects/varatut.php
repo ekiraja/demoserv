@@ -3,17 +3,20 @@ class Varaus{
  
     // database yhteys ja taulun nimi
     private $conn;
+    // private $table_varaus = "tila_view";
+    
+   
     private $table_varaus = "varaus";
-  /*  private $table_name_K = "kurssit";
-    private $table_name_T = "tilat";
-    private $table_name_O = "kouluttajat";
-*/ 
+    private $table_kurssit = "kurssit";
+    private $table_tilat = "tilat";
+    private $table_kouluttajat = "kouluttajat";
+    
     // objektin ominaisuudet
     public $id;
-    public $oppi_aine;
-    public $kouluttaja_id;
-    public $kurssi_id;
-    public $tila_id;
+    public $aihe;
+    public $kouluttaja;
+    public $kurssi;
+    public $tila;
     public $varaus;
  
     // constructor  $db kun yhteys kantaan
@@ -26,9 +29,23 @@ class Varaus{
     
         // valitaan kaikki kyselyyn
         $query = "SELECT
-                    `id`, `oppi_aine`, `koluttaja_id`, `kurssi_id`, `tila_id`, `varaus`
+                 `varaus`.`id`,
+                 `varaus`.`varaus`,
+                 `kurssit`.`nimi` AS `kurssi`,
+                 `varaus`.`oppi_aine` AS `aihe`,
+                 `tilat`.`nimi` AS `tila`,
+                 `kouluttajat`.`nimi` AS `kouluttaja`
                 FROM
-                    " . $this->table_varaus . " 
+
+                (        (        (
+                 " . $this->table_varaus . "
+                 INNER JOIN " . $this->table_kouluttajat . " ON `kouluttaja_id` = `kouluttajat`.`id`
+                                  )
+                 INNER JOIN " . $this->table_kurssit . " ON `kurssi_id` = `kurssit`.`id`
+                        )
+                 INNER JOIN " . $this->table_tilat . " ON `tila_id` = `tilat`.`id`
+                )
+
                 ORDER BY
                     varaus DESC";
     
@@ -46,9 +63,22 @@ class Varaus{
     
         // kysellään kaikki
         $query = "SELECT
-                     `id`, `oppi_aine`, `koluttaja_id`, `kurssi_id`, `tila_id`, `varaus`
+                      `varaus`.`id`,
+                 `varaus`.`varaus`,
+                 `kurssit`.`nimi` AS `kurssi`,
+                 `varaus`.`oppi_aine` AS `aihe`,
+                 `tilat`.`nimi` AS `tila`,
+                 `kouluttajat`.`nimi` AS `kouluttaja`
                 FROM
-                    " . $this->table_varaus . " 
+
+                (        (        (
+                 " . $this->table_varaus . "
+                 INNER JOIN " . $this->table_kouluttajat . " ON `kouluttaja_id` = `kouluttajat`.`id`
+                                  )
+                 INNER JOIN " . $this->table_kurssit . " ON `kurssi_id` = `kurssit`.`id`
+                        )
+                 INNER JOIN " . $this->table_tilat . " ON `tila_id` = `tilat`.`id`
+                )
                 WHERE
                     id= '".$this->id."'";
     
@@ -63,9 +93,8 @@ class Varaus{
     // lisätään opettaja
     function create(){
     
-        if($this->isAlreadyExist()){
-            return false;
-        }
+        
+        
         
         // kysely tietueen lisäämiseen
         $query = "INSERT INTO  ". $this->table_varaus ." 
@@ -124,24 +153,6 @@ class Varaus{
         return false;
     }
 
-    function isAlreadyExist(){
-        $query = "SELECT *
-            FROM
-                " . $this->table_varaus . " 
-            WHERE
-                email='".$this->email."'";
-
-        // muotoillaan kysely statement
-        $stmt = $this->conn->prepare($query);
-
-        // ajetaan kysely
-        $stmt->execute();
-
-        if($stmt->rowCount() > 0){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+    
+    
 }

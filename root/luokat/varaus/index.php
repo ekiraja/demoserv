@@ -42,21 +42,21 @@
   $(document).ready(function(){
     $.ajax({
         type: "GET",
-        url: "../api/varaus/lue.php",
+        url: "../api/varaukset/lue.php",
         dataType: 'json',
         success: function(data) {
             var response="";
             for(var user in data){
                 response += "<tr>"+
-                "<td>"+data[user].oppi_aine+"</td>"+
-                "<td>"+data[user].kouluttaja_id+"</td>"+
-                "<td>"+data[user].kurssi_id+"</td>"+
-                "<td>"+data[user].tila_id+"</td>"+
+                "<td>"+data[user].aihe+"</td>"+
+                "<td>"+data[user].kouluttaja+"</td>"+
+                "<td>"+data[user].kurssi+"</td>"+
+                "<td>"+data[user].tila+"</td>"+
                 "<td>"+data[user].varaus+"</td>"+
                 "<td><a href='../varaus/paivita.php?id="+data[user].id+"'>Muokkaa</a> | <a href='#' onClick=Remove('"+data[user].id+"')>Poista</a></td>"+
                 "</tr>";
             }
-            $(response).appendTo($("#opettajat"));
+            $(response).appendTo($("#varaus"));
         }
     });
   });

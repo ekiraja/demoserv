@@ -6,7 +6,7 @@
                   <div class="box box-primary">
 
                         <div class="box-header with-border">
-                          <h3 class="box-title">Lisää opettaja</h3>
+                          <h3 class="box-title">Lisää kurssi</h3>
                         </div>
 
                     <!-- /.box-header -->
@@ -15,34 +15,19 @@
                       <div class="box-body">
 
                         <div class="form-group">
-                          <label for="exampleInputName1">Nimi</label>
-                         <input type="text" class="form-control" id="nimi" placeholder="Anna Nimi">
+                          <label for="exampleInputName1">Kurssin nimi</label>
+                         <input type="text" class="form-control" id="nimi" placeholder="Anna kurssin nimi">
                         </div>
-
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email osoite</label>
-                            <input type="email" class="form-control" id="email" placeholder="Anna email">
-                          </div>
-
-                            <div class="form-group">
-                              <label for="exampleInputPassword1">Salasana</label>
-                              <input type="password" class="form-control" id="password" placeholder="Salasana">
-                            </div>
-
-                              <div class="form-group">
-                                <label for="exampleInputName1">Puhelin</label>
-                                <input type="text" class="form-control" id="puhelin" placeholder="Anna Puh.no.">
-                              </div>
-
-                                   <div class="form-group">
-                                    <label for="exampleInputName1">Tehtävä</label>
-                                    <input type="text" class="form-control" id="oppi_aine" placeholder="Anna tehtävä">
-                                   </div>
+                        <div class="form-group">
+                          <label for="exampleInputName1">Koulutus ala</label>
+                         <input type="text" class="form-control" id="koulutus_ala" placeholder="Anna koulutus ala">
+                        </div>
+                         
                         </div>
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                          <input type="button" class="btn btn-primary" onClick="AddOpettaja()" value="Tallenna"></input>
+                          <input type="button" class="btn btn-primary" onClick="Addkurssi()" value="Tallenna"></input>
                         </div>
 
                      </form>
@@ -53,19 +38,16 @@
 include('../master.php');
 ?>
 <script>
-  function AddOpettaja(){
+  function Addkurssi(){
 
         $.ajax(
         {
             type: "POST",
-            url: '../api/opettaja/uusi.php',
+            url: '../api/kurssit/uusi.php',
             dataType: 'json',
             data: {
                 nimi: $("#nimi").val(),
-                email: $("#email").val(),        
-                password: $("#password").val(),
-                puhelin: $("#puhelin").val(),
-                oppi_aine: $("#oppi_aine").val()
+                koulutus_ala: $("#koulutus_ala").val()
             },
             error: function (result) {
                 alert(result.responseText);
@@ -73,7 +55,7 @@ include('../master.php');
             success: function (result) {
                 if (result['status'] == true) {
                     alert("Lisätty uusi kouluttaja!");
-                    window.location.href = '/luokat/opettaja';
+                    window.location.href = '/luokat/kurssit';
                 }
                 else {
                     alert(result['message']);

@@ -121,7 +121,7 @@ class Opettaja{
         }
         return false;
     }
-
+    //  turha kun kannassa uniikki
     function isAlreadyExist(){
         $query = "SELECT *
             FROM

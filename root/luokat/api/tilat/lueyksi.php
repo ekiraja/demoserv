@@ -20,7 +20,7 @@ if($stmt->rowCount() > 0){
     $tila_arr=array(
         "id" => $row['id'],
         "nimi" => $row['nimi'],
-        "tila" => $row['tila'],
+        "paikat" => $row['paikat'],
         "luotu" => $row['luotu']
     );
 }

@@ -1,46 +1,41 @@
 <?php
+  $content = 
   $content = '<div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
                   <!-- general form elements -->
                   <div class="box box-primary">
-                    <div class="box-header with-border">
-                      <h3 class="box-title">Muokkaa opettaja</h3>
-                    </div>
+
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Lisää kurssi</h3>
+                        </div>
+
                     <!-- /.box-header -->
                     <!-- form start -->
                     <form role="form">
                       <div class="box-body">
+
                         <div class="form-group">
-                          <label for="exampleInputName1">Nimi</label>
-                          <input type="text" class="form-control" id="nimi" placeholder="Anna Nimi">
+                          <label for="exampleInputName1">Kurssin nimi</label>
+                         <input type="text" class="form-control" id="nimi" placeholder="Anna kurssin nimi">
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email osoite</label>
-                          <input type="email" class="form-control" id="email" placeholder="Anna email">
+                          <label for="exampleInputName1">Koulutus ala</label>
+                         <input type="text" class="form-control" id="koulutus_ala" placeholder="Anna koulutus ala">
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Salasana</label>
-                          <input type="password" class="form-control" id="password" placeholder="Salasana">
+                         
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputName1">Puhelin</label>
-                          <input type="text" class="form-control" id="puhelin" placeholder="Anna Puh.no.">
+                        <!-- /.box-body -->
+
+                        <div class="box-footer">
+                          <input type="button" class="btn btn-primary" onClick="Updatekurssi()" value="Tallenna"></input>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputName1">Opetustehtävä</label>
-                          <input type="text" class="form-control" id="oppi_aine" placeholder="Anna tehtävä">
-                        </div>
-                      </div>
-                      <!-- /.box-body -->
-                      <div class="box-footer">
-                        <input type="button" class="btn btn-primary" onClick="UpdateOpettaja()" value="Tallenna"></input>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- /.box -->
-                </div>
-              </div>';
+
+                     </form>
+                    </div>
+                 <!-- /.box -->
+                 </div>
+               </div>';
               
   include('../master.php');
 ?>
@@ -48,33 +43,27 @@
     $(document).ready(function(){
         $.ajax({
             type: "GET",
-            url: "../api/opettaja/lueyksi.php?id=<?php echo $_GET['id']; ?>",
+            url: "../api/kurssit/lueyksi.php?id=<?php echo $_GET['id']; ?>",
             dataType: 'json',
             success: function(data) {
                 $('#nimi').val(data['nimi']);
-                $('#email').val(data['email']);
-                $('#password').val(data['password']);
-                $('#puhelin').val(data['puhelin']);
-                $('#oppi_aine').val(data['oppi_aine']);
+                $('#koulutus_ala').val(data['koulutus_ala']);
             },
             error: function (result) {
                 console.log(result);
             },
         });
     });
-    function UpdateOpettaja(){
+    function Updatekurssi(){
         $.ajax(
         {
             type: "POST",
-            url: '../api/opettaja/muokkaa.php',
+            url: '../api/kurssit/muokkaa.php',
             dataType: 'json',
             data: {
                 id: <?php echo $_GET['id']; ?>,
                 nimi: $("#nimi").val(),
-                email: $("#email").val(),        
-                password: $("#password").val(),
-                puhelin: $("#puhelin").val(),
-                oppi_aine: $("#oppi_aine").val()
+                koulutus_ala: $("#koulutus_ala").val()
             },
             error: function (result) {
                 alert(result.responseText);
@@ -82,7 +71,7 @@
             success: function (result) {
                 if (result['status'] == true) {
                     alert("Muokkaus onnustui!");
-                    window.location.href = '/luokat/opettaja';
+                    window.location.href = '/luokat/kurssit';
                 }
                 else {
                     alert(result['message']);

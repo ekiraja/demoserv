@@ -24,10 +24,10 @@ if($num>0){
         extract($row);
         $varaus_item=array(
             "id" => $id,
-            "oppi_aine" => $oppi_aine,
-            "kouluttaja_id" => $kouluttaja_id,
-            "kurssi_id" => $kurssi_id,
-            "tila_id" => $tila_id,
+            "aihe" => $aihe,
+            "kouluttaja" => $kouluttaja,
+            "kurssi" => $kurssi,
+            "tila" => $tila,
             "varaus" => $varaus
         );
         array_push($varaukset_arr["varaukset"], $varaus_item);

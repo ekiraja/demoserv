@@ -116,7 +116,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/luokat/varaus/uusi.php">Lisää varaus</a></li>
-            <li><a href="/luokat/varaus">Kaikki tilatt</a></li>
+            <li><a href="/luokat/varaus">Kaikki varaukset</a></li>
           </ul>
         </li>
 
@@ -140,7 +140,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/luokat/tilat/uusi.php">Lisää tila</a></li>
-            <li><a href="/luokat/tilat">Kaikki tilatt</a></li>
+            <li><a href="/luokat/tilat">Kaikki tilat</a></li>
           </ul>
         </li> 
 
@@ -152,7 +152,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/luokat/kurssit/uusi.php">Lisää kurssi</a></li>
-            <li><a href="/luokat/kurssit">Kaikki tilatt</a></li>
+            <li><a href="/luokat/kurssit">Kaikki kurssit</a></li>
           </ul>
         </li>
 
