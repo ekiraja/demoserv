@@ -64,7 +64,7 @@
         $.ajax(
         {
             type: "POST",
-            url: '../api/opettaja/muokkaa.php',
+            url: '../api/varaukset/muokkaa.php',
             dataType: 'json',
             data: {
                 id: <?php echo $_GET['id']; ?>,
@@ -80,7 +80,7 @@
             success: function (result) {
                 if (result['status'] == true) {
                     alert("Muokkaus onnustui!");
-                    window.location.href = '/luokat/opettaja';
+                    window.location.href = '/luokat/varaus';
                 }
                 else {
                     alert(result['message']);

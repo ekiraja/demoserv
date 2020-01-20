@@ -2,38 +2,38 @@
  
 // sisällytetään kanta ja objekti tiedostot
 include_once '../config/database.php';
-include_once '../objects/opettaja.php';
+include_once '../objects/varatut.php';
 // yhteyden teko
 $database = new Database();
 $db = $database->getConnection();
  
-// tehdään opettaja objekti
-$opettaja = new Opettaja($db);
+// tehdään varaus objekti
+$varaus = new varaus($db);
  
-// opettaja objektin arvot
-$opettaja->nimi = $_POST['nimi'];
-$opettaja->email = $_POST['email'];
-$opettaja->password = base64_encode($_POST['password']);
-$opettaja->puhelin = $_POST['puhelin'];
-$opettaja->oppi_aine = $_POST['oppi_aine'];
-$opettaja->luotu = date('Y-m-d H:i:s');
-// lisätään opettaja
-if($opettaja->create()){
-    $opettaja_arr=array(
+// varaus objektin arvot
+$varaus->auhe = $_POST['aihe'];
+$varaus->kouluttaja = $_POST['kouluttaja'];
+$varaus->kurssi = $_POST['kurssi'];
+$varaus->tila = $_POST['tila'];
+$varaus->varaus = $_POST['varaus'];
+// lisätään varaus
+if($varaus->create()){
+    $varaus_arr=array(
         "status" => true,
         "message" => "Lisääminen onnistui.",
-        "id" => $opettaja->id,
-        "nimi" => $opettaja->nimi,
-        "email" => $opettaja->email,
-        "puhelin" => $opettaja->puhelin,
-        "oppi_aine" => $opettaja->oppi_aine
+        "id" => $varaus->id,
+        "aihe" => $varaus->aihe,
+        "kouluttaja" => $varaus->kouluttaja,
+        "kurssi" => $varaus->kurssi,
+        "tila" => $varaus->tila,
+        "varaus" => $varaus->varaus
     );
 }
 else{
-    $opettaja_arr=array(
+    $varaus_arr=array(
         "status" => false,
-        "message" => "Sähköposti on jo olemassa!"
+        "message" => "kyseiselle päivälle on jo kouluttaja varattu!"
     );
 }
-print_r(json_encode($opettaja_arr));
+print_r(json_encode($varaus_arr));
 ?>

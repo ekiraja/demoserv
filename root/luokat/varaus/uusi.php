@@ -1,79 +1,84 @@
 <?php 
+  $date = date('Y-m-d');
   $content = '<div class="row">
-                <!-- left column -->
-                <div class="col-md-12">
-                  <!-- general form elements -->
-                  <div class="box box-primary">
+              <!-- left column -->
+              <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
 
-                        <div class="box-header with-border">
-                          <h3 class="box-title">Lisää opettaja</h3>
-                        </div>
+                      <div class="box-header with-border">
+                        <h3 class="box-title">Lisää varaus</h3>
+                      </div>
 
-                    <!-- /.box-header -->
-                    <!-- form start -->
-                    <form role="form">
-                      <div class="box-body">
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <form role="form">
+                    <div class="box-body">
 
-                        <div class="form-group">
-                          <label for="exampleInputName1">Nimi</label>
-                         <input type="text" class="form-control" id="nimi" placeholder="Anna Nimi">
-                        </div>
-
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email osoite</label>
-                            <input type="email" class="form-control" id="email" placeholder="Anna email">
-                          </div>
-
+                      <div class="form-group">
+                        <label for="date">Anna päivä</label>
+                        <input type="date"   class="form-control" id="varaus" placeholder="" >
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Anna opetus aihe</label>
+                        <input type="text"   class="form-control" id="aihe" placeholder="" >
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Anna kouluttaja</label>
+                        <input type="text"   class="form-control" id="kouluttaja" placeholder="" >
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Anna kurssi</label>
+                        <input type="text"   class="form-control" id="kurssi" placeholder="" >
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Anna tila</label>
+                        <input type="text"   class="form-control" id="tila" placeholder="" >
+                      </div>     
+                            <!--
                             <div class="form-group">
-                              <label for="exampleInputPassword1">Salasana</label>
-                              <input type="password" class="form-control" id="password" placeholder="Salasana">
-                            </div>
-
-                              <div class="form-group">
-                                <label for="exampleInputName1">Puhelin</label>
-                                <input type="text" class="form-control" id="puhelin" placeholder="Anna Puh.no.">
+                              <input type="text" value="02/16/12" data-date-format="mm/dd/yy" class="datepicker" >
                               </div>
+                              -->
+                      <!-- /.box-body -->
 
-                                   <div class="form-group">
-                                    <label for="exampleInputName1">Tehtävä</label>
-                                    <input type="text" class="form-control" id="oppi_aine" placeholder="Anna tehtävä">
-                                   </div>
-                        </div>
-                        <!-- /.box-body -->
+                      <div class="box-footer">
+                        <input type="button" class="btn btn-primary" onClick="AddVaraus()" value="Tallenna"></input>
+                      </div>
 
-                        <div class="box-footer">
-                          <input type="button" class="btn btn-primary" onClick="AddOpettaja()" value="Tallenna"></input>
-                        </div>
-
-                     </form>
-                    </div>
-                 <!-- /.box -->
-                 </div>
-               </div>';
+                  </form>
+                  </div>
+              <!-- /.box -->
+              </div>
+            </div>';
 include('../master.php');
 ?>
 <script>
-  function AddOpettaja(){
+   //--haetaan aika--
+   //$(document).ready(function(){
+  //$('#datepicker').datepicker(); 
+  //});
+  function AddVaraus(){
 
         $.ajax(
         {
             type: "POST",
-            url: '../api/opettaja/uusi.php',
+            url: '../api/varaukset/uusi.php',
             dataType: 'json',
             data: {
-                nimi: $("#nimi").val(),
-                email: $("#email").val(),        
-                password: $("#password").val(),
-                puhelin: $("#puhelin").val(),
-                oppi_aine: $("#oppi_aine").val()
+                varaus: $("#varaus").val(),
+                aihe: $("#aihe").val(),        
+                kouluttaja: $("#kouluttaja").val(),
+                kurssi: $("#kurssi").val(),
+                tila: $("#tila").val()
             },
             error: function (result) {
                 alert(result.responseText);
             },
             success: function (result) {
                 if (result['status'] == true) {
-                    alert("Lisätty uusi kouluttaja!");
-                    window.location.href = '/luokat/opettaja';
+                    alert("Lisätty uusi varaus!");
+                    window.location.href = '/luokat/varaus';
                 }
                 else {
                     alert(result['message']);

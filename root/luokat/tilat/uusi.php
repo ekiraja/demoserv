@@ -21,7 +21,7 @@
                           
                               <div class="form-group">
                                 <label for="exampleInputName1">Paikkojen määrä</label>
-                                <input type="text" class="form-control" id="paikat" placeholder="Anna paikkojen määrä">
+                                <input type="text" class="form-control" id="paikat" placeholder="Anna paikkojen määrä ja muuta tietoa">
                               </div>
                                    
                         </div>

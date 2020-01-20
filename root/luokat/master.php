@@ -11,16 +11,32 @@
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- datapicker tyylit -->
+  <link rel="stylesheet" src="../bower_components/bootstrap-datepicker/css/datepicker.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="../dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="../dist/css/skins/skin-purple.min.css">
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <!-- taitotalo favicon -->
-  <link rel="shortcut icon" href="https://www.taitotalo.fi/themes/custom/AEL-radix/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/vnd.microsoft.icon" />
+
+  <!-- datapicker javaskriptit yms
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.fi.min.js"></script>
+  <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+  --> 
+<script>
+  
+</script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+
+
+<body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
   <!-- Main Header -->
   <header class="main-header">
@@ -42,26 +58,26 @@
         <ul class="nav navbar-nav">
           
           
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="../dist/img/avatar5.png" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+          <!-- User Account Menu ->
+          <li class="dropdown user user-menu"> -->
+            <!-- Menu Toggle Button ->
+            <a href="" class="dropdown-toggle" data-toggle="dropdown"> -->
+              <!-- The user image in the navbar->
+              <img src="../dist/img/avatar5.png" class="user-image" alt="User Image"> -->
+              <!-- hidden-xs hides the username on small devices so only the image appears. ->
               <span class="hidden-xs">Ahmed Khalid</span>
             </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
+            <ul class="dropdown-menu"> -->
+              <!-- The user image in the menu ->
               <li class="user-header">
                 <img src="../dist/img/avatar5.png" class="img-circle" alt="User Image">
                 <p>
                   Ahmed Khalid - Developer
                   <small>Member since May. 2018</small>
                 </p>
-              </li>
+              </li> -->
               
-              <!-- Menu Footer-->
+              <!-- Menu Footer->
               <li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
@@ -71,7 +87,7 @@
                 </div>
               </li>
             </ul>
-          </li>
+          </li> -->
           <!-- Control Sidebar Toggle Button -->
         
         </ul>
@@ -82,18 +98,19 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+      <!-- Sidebar user panel (optional) ->
       <div class="user-panel">
         <div class="pull-left image">
           <img src="../dist/img/avatar5.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Ahmed Khalid</p>
-          <!-- Status -->
+          -->
+          <!-- Status ->
           <a href=""><i class="fa fa-circle text-success"></i> Online</a>
         </div>
-      </div>
-      <!-- search form (Optional) -->
+      </div> -->
+      <!-- search form (Optional) -> 
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -102,7 +119,7 @@
               </button>
             </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">

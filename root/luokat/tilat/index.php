@@ -56,7 +56,7 @@
     });
   });
   function Remove(id){
-    var result = confirm("Oletko varma että haluat poistaa tämän kouluttajan?"); 
+    var result = confirm("Oletko varma että haluat poistaa tämän tilan?"); 
     if (result == true) { 
         $.ajax(
         {

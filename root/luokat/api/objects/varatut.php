@@ -24,7 +24,7 @@ class Varaus{
         $this->conn = $db;
     }
 
-    // lue kaikki opettajat
+    // lue kaikki varaust
     function read(){
     
         // valitaan kaikki kyselyyn
@@ -63,7 +63,7 @@ class Varaus{
     
         // kysellään kaikki
         $query = "SELECT
-                      `varaus`.`id`,
+                 `varaus`.`id`,
                  `varaus`.`varaus`,
                  `kurssit`.`nimi` AS `kurssi`,
                  `varaus`.`oppi_aine` AS `aihe`,
@@ -80,7 +80,7 @@ class Varaus{
                  INNER JOIN " . $this->table_tilat . " ON `tila_id` = `tilat`.`id`
                 )
                 WHERE
-                    id= '".$this->id."'";
+                    id= '". $this->table_varaus .".".$this->id."'";
     
         // muotoillaan kysely
         $stmt = $this->conn->prepare($query);
@@ -90,17 +90,22 @@ class Varaus{
         return $stmt;
     }
 
-    // lisätään opettaja
-    function create(){
+    // lisätään varaus
     
-        
+    function create(){
+
+        /*
+        if($this->isAlreadyExistVaraus()){
+            return false;
+        }
+        */
         
         
         // kysely tietueen lisäämiseen
         $query = "INSERT INTO  ". $this->table_varaus ." 
-                        ( `oppi_aine`, `koluttaja_id`, `kurssi_id`, `tila_id`, `varaus`)
+                        ( `aihe`, `koluttaja`, `kurssi`, `tila`, `varaus`)
                   VALUES
-                        ('".$this->oppi_aine."', '".$this->koluttaja_id."', '".$this->kurssi_id."', '".$this->tila_id."', '".$this->varaus."')";
+                        ('".$this->aihe."', '".$this->koluttaja."', '".$this->kurssi."', '".$this->tila."', '".$this->varaus."')";
     
         // muotoillaan kysely
         $stmt = $this->conn->prepare($query);
@@ -114,14 +119,14 @@ class Varaus{
         return false;
     }
 
-    // muokataan opettaja 
+    // muokataan varaus 
     function update(){
     
         // kysely tietueen lisäämiseen
         $query = "UPDATE
                     " . $this->table_varaus . "
                 SET
-                    oppi_aine='".$this->oppi_aine."', kouluttaja_id='".$this->koluttaja_id."', kurssi_id='".$this->kurssi_id."', tila_id='".$this->tila_id."', varaus='".$this->varaus."'
+                    aihe='".$this->aihe."', kouluttaja_id='".$this->koluttaja_id."', kurssi_id='".$this->kurssi_id."', tila_id='".$this->tila_id."', varaus='".$this->varaus."'
                 WHERE
                     id='".$this->id."'";
     
@@ -134,10 +139,10 @@ class Varaus{
         return false;
     }
 
-    // poistetaan opettaja
+    // poistetaan varaus
     function delete(){
         
-        //kysely tietueen lisäämiseen
+        //kysely tietueen poistoon
         $query = "DELETE FROM
                     " . $this->table_varaus . "
                 WHERE
@@ -152,7 +157,27 @@ class Varaus{
         }
         return false;
     }
+    /*  -- 
+    function isAlreadyExistVaraus(){
+        $query = "SELECT *
+            FROM
+                " . $this->table_varaus . " 
+            WHERE
+                kouluttaja_id ='".$this->kouluttaja_id."'";
 
-    
+        // muotoillaan kysely statement
+        $stmt = $this->conn->prepare($query);
+
+        // ajetaan kysely
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    */
     
 }
